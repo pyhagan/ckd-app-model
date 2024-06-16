@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "837353816360",
+    "project_id": "ckdpredictionapp",
+    "storage_bucket": "ckdpredictionapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837353816360:android:be827ad672ab72f94a501d",
+        "android_client_info": {
+          "package_name": "com.example.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkY7ZkVxirJLdhWZTeef7Y3YWN5Sh7b_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
