@@ -1,0 +1,89 @@
+
+             //MAIN.DART
+import 'package:firebase_core/firebase_core.dart'; // Import Firebase core package for initialization
+import 'package:flutter/material.dart'; // Import Flutter material design package
+import 'package:flutter/widgets.dart'; // Import Flutter widgets package
+import './home_Screen.dart'; // Import custom home screen
+import './splash.dart'; // Import custom splash screen
+import './login.dart'; // Import custom login screen
+import './signup.dart'; // Import custom signup screen
+
+// Main function to initialize the app
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter binding is initialized
+  await Firebase.initializeApp(); // Initialize Firebase
+  runApp(MyApp()); // Run the MyApp widget
+}
+
+// Define the main application widget
+class MyApp extends StatelessWidget {
+  const MyApp({super.key}); // Constructor with optional key
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(brightness: Brightness.light), // Define light theme
+      darkTheme: ThemeData(brightness: Brightness.dark), // Define dark theme
+      themeMode: ThemeMode.dark, // Set the default theme mode to dark
+      home: LoginPage(), // Set the initial route to the login page
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+// A ListTile widget for the 'Hypertension' option
+ListTile(
+  // The title of the ListTile, styled with bold font and black color
+  title: Text(
+    'Hypertension',
+    style: TextStyle(
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    ),
+  ),
+  // The subtitle of the ListTile containing a Row with Radio buttons
+  subtitle: Row(
+    children: [
+      // Radio button for 'Yes' option
+      Radio(
+        value: 'Yes', // The value of this Radio button
+        groupValue: _selectedHypertension, // The currently selected value in the group
+        // Function called when the Radio button is selected
+        onChanged: (value) {
+          setState(() {
+            _selectedHypertension = value.toString(); // Update the selected value
+          });
+        },
+      ),
+      // Text label for the 'Yes' Radio button
+      Text(
+        'Yes',
+        style: TextStyle(color: Colors.black),
+      ),
+      // Radio button for 'No' option
+      Radio(
+        value: 'No', // The value of this Radio button
+        groupValue: _selectedHypertension, // The currently selected value in the group
+        // Function called when the Radio button is selected
+        onChanged: (value) {
+          setState(() {
+            _selectedHypertension = value.toString(); // Update the selected value
+          });
+        },
+      ),
+      // Text label for the 'No' Radio button
+      Text(
+        'No',
+        style: TextStyle(color: Colors.black),
+      ),
+    ],
+  ),
+),
+
